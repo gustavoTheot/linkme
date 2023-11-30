@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    background-image: url('./assets/bg-desktop-light.svg');
+    transition: background-color 0.5s ease, color 0.5s ease;}
+
+.container{
+    max-width: 64rem;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    margin-top: 4rem;
+}
+
+header, main, footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.people{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.people img{
+    border-radius: 999px;
+    width: 6rem;
+}
+
+.people span{
+    margin: 1rem 0 1rem 0;
+    font-weight: bold;
+}
+
+.buttonDarkMonde{
+    width: 4rem;
+    height: 1.5rem;
+
+    border: 2px solid blueviolet;
+    border-radius: 20px;
+    position: relative;
+    background-color: transparent;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.buttonDarkMonde::before{
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: blueviolet;
+    border-radius: 999px;
+    right: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    transition: left 0.5s ease, background-color 0.5s ease;}
+
+
+main{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+main ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main ul li{
+    list-style: none;
+
+    width: 26rem;
+    height: 3rem;
+
+    border-radius: 6px;
+
+    background-color: blueviolet;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: linear;
+
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+
+main ul li:hover{
+    transform: scale(1.05)
+}
+
+main ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.socialMedia a{
+    margin-top: 1rem;
+    text-decoration: none;
+    color: blueviolet;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMedia a:hover{
+    transform: scale(1.1);
+}
+
+.socialMedia a i{
+    gap: 0.25rem;
+    font-size: 1.5em;
+}
+
+.end{
+    font-size: 0.875rem;
+    margin-top: 2rem;
+}
+
+.dark-mode{
+    color: white;
+    background-image: url('./assets/bg-desktop.svg');
+    transition: background-color 0.5s ease, color 0.5s ease;} 
+
+.buttonDarkMonde.active::before{
+    left: 50%;
+    background-color: white;
+}
+
+@media (max-width: 520px){
+    body{
+        background-size: 100%;
+        background-image: url('./assets/bg-mobile-light.svg');
+    }
+
+    .dark-mode{
+        background-image: url('./assets/bg-mobile.svg');
+    }
+
+    main ul li{    
+        width: 20rem;
+    }
+}
